@@ -67,6 +67,19 @@ export default {
     // this.$axios.get('api/test').then(res=>{
     //   console.log(res)
     // })
+    const isFirst = function (callback) {
+      console.log('is first!');
+      callback.on(); // 執行傳入的 isSecond()
+      console.log('is first2')
+    }
+
+// callback function
+    const isSecond = {
+        on:()=>{
+            console.log('on')
+        }
+    }
+    isFirst(isSecond)
   },
   methods: {
     onOpen() {
